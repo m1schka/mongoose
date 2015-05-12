@@ -5186,7 +5186,8 @@ const char *mg_set_option(struct mg_server *server, const char *name,
                                         mg_ev_handler, NULL);
       if (c == NULL) {
         error_msg = "Cannot bind to port";
-        break;
+	printf("Error: %s\n", error_msg);
+	exit(1);
       } else {
         char buf2[50], cert[100], ca[100];
         union socket_address sa;
